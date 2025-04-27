@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -9,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Lecture {
+public class Lecture implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
@@ -28,12 +30,19 @@ public class Lecture {
     private String subTitle;
     private String description;
 
-    private LectureBaseLecture baseLecture;
+    private BaseLecture baseLecture;
+    @OneToMany
     private ArrayList<LectureCriteria> criteriaList;
+    @OneToMany
     private ArrayList<Subscription> subscriptionList;
+    @ManyToMany
     private ArrayList<LectureView> lectureViewList;
+
+    @ManyToMany
     private ArrayList<AdministrativePerson> lecturerList;
-    private ArrayList<AdministrativePerson> clerkList;
+    @ManyToMany
+    private ArrayList<AdministrativePerson> clerkList; // TODO: Clerklist? Better name?
+    @ManyToMany
     private ArrayList<AdministrativePerson> examinerList;
     private ArrayList<LectureTime> lectureTimeList;
     private ArrayList<LectureExamTime> exameTimeList;    

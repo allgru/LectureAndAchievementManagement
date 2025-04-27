@@ -1,4 +1,5 @@
 plugins {
+	java
 	id("org.springframework.boot") version "3.3.11"
 	id("io.spring.dependency-management") version "1.1.6"
 	id("io.swagger.core.v3.swagger-gradle-plugin") version "2.2.27"

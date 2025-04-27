@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import java.util.ArrayList;
 
@@ -6,17 +6,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "configuration")
+@Table(name = "room")
 @Setter
 @Getter
 @NoArgsConstructor
-public class Room {
+public class Room implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
     private int id;
@@ -29,6 +30,7 @@ public class Room {
     private String city;
     private String country;
     private String phoneNumber;
+    @OneToMany
     private ArrayList<AdministrativePerson> responsiblePersonList;
 
 }

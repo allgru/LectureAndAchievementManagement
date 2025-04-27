@@ -9,6 +9,16 @@ __THIS IS CURRENTLY WORK IN PROGRESS, PLEASE WAIT FOR UPDATES__
 
 As back-end <a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> is used. In the front-end <a href="https://angular.dev/" target="_blank">Angular</a> is used.  
 
+```
+TODOS:
+- Correct Mapping
+- Userauthorization
+- Subscribe and unsubscribe lecture
+- Create and modify lecture
+- Create and modify Base lecture
+- Frontend
+- Tests
+```
 
 
 ```./gradlew bootRun```

@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class Configuration {
+public class Configuration implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;

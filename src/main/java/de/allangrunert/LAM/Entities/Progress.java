@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,13 +8,14 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "configuration")
+@Table(name = "progress")
 @Setter
 @Getter
 @NoArgsConstructor
-public class Progress {
+public class Progress implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
     private int id;

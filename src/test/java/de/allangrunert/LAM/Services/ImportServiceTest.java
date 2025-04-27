@@ -1,4 +1,4 @@
-package de.allangrunert.Services;
+package de.allangrunert.LAM.Services;
 
 public class ImportServiceTest {
     

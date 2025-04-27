@@ -1,5 +1,6 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.UpdateTimestamp;
@@ -14,11 +15,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "base_lectures")
+@Table(name = "base_lecture")
 @Getter
 @Setter
 @NoArgsConstructor
-public class BaseLecture {
+public class BaseLecture implements Serializable {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Id   
    private Long id;

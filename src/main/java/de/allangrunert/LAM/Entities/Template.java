@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "configuration")
+@Table(name = "template")
 @Setter
 @Getter
 @NoArgsConstructor
-public class Template {
+public class Template implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
     private int id;

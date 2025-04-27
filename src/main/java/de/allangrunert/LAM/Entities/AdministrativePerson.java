@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import java.time.LocalDateTime;
 import jakarta.persistence.Entity;
@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "configuration")
+@Table(name = "administrative_person")
 @Setter
 @Getter
 @NoArgsConstructor
-public class AdministrativePerson {
+public class AdministrativePerson implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

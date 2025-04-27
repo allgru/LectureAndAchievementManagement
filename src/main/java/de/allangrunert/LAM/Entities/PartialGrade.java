@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import java.time.LocalDateTime;
 
@@ -14,11 +14,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "configuration")
+@Table(name = "partial_grade")
 @Setter
 @Getter
 @NoArgsConstructor
-public class PartialGrade {
+public class PartialGrade implements java.io.Serializable { 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
     private int id;

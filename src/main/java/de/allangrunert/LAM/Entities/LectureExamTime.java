@@ -1,11 +1,13 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +18,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class LectureExamTime {
+public class LectureExamTime implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
     private int id;
@@ -24,6 +26,7 @@ public class LectureExamTime {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String dayOfWeek;
-    private Room room;
+    @OneToMany
+    private ArrayList<Room> room;
 
 }

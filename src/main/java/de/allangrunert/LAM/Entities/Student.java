@@ -1,4 +1,4 @@
-package de.allangrunert.LAM.Entities;
+package de.allangrunert.lam.entities;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -7,20 +7,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "configuration")
+@Table(name = "student")
 @Setter
 @Getter
 @NoArgsConstructor
-public class Student {
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Student implements Serializable {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
-    private int id;
+    private Long id;
     private String name;
     private String firstName;
     private String lastName;
@@ -40,5 +42,6 @@ public class Student {
     private String birthCountry;
     private String socialMedia;
     private User user;
+    @OneToMany
     private ArrayList<StudentProgress> progressList;
 }
