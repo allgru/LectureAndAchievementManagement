@@ -1,6 +1,10 @@
 package de.allangrunert.lam.entities;
 
 import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +22,7 @@ import lombok.Setter;
 public class AdministrativePerson implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
     private String name;
     private String firstName;
@@ -38,5 +43,9 @@ public class AdministrativePerson implements java.io.Serializable {
     private String birthCountry;
     private String socialMedia;
     // private Set Types<Lecturer ...
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 }
     

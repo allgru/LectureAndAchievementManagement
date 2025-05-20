@@ -23,8 +23,18 @@ public class LectureController {
     @GetMapping("/getStudentLectures/{studentId}")
     public List<Lecture> getLectures(@PathVariable int studentId) 
     {
-        
-        return null;
+        Lecture lecture = new Lecture();
+        // lecture.setId(1);
+        lecture.setName("Lecture 1");
+        lecture.setDescription("Description of Lecture 1");
+        // lecture.setStartDate("2023-10-01");
+        // lecture.setEndDate("2023-10-31");
+        // lecture.setCreatedAt("2023-09-01");
+        // lecture.setUpdatedAt("2023-09-15");
+        // lecture.setCreatedBy("Admin");
+        /// lecture.setUpdatedBy("Admin");
+               
+        return List.of(lecture);
     }
 
     @PostMapping("/save")

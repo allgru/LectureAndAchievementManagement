@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "token.secret.key",
+    "type": "java.lang.String",
+    "description": "Specifies the secret key used for signing the JWT token. This should be a secure and random string."
+  },
+  {
+    "name": "token.expirationms",
+    "type": "java.lang.String",
+    "description": "Specifies the expiration time of the token in milliseconds. Default is 3600000ms (1 hour)."
+  }
+]}

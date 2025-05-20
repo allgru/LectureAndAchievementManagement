@@ -1,5 +1,6 @@
 package de.allangrunert.lam.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,10 +18,12 @@ import lombok.Setter;
 @NoArgsConstructor
 public class SubscriptionRuleCriteria implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id 
-    private int id;
-    @OneToOne
-    private Criteria criteria;
+    @Id
+    @Column(nullable = false)
+    private Long id;
+
+    /* @OneToOne
+    private Criteria criteria;*/
     private String value;
  
 }

@@ -1,5 +1,10 @@
 package de.allangrunert.lam.entities;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,9 +23,15 @@ import lombok.Setter;
 public class BaseLectureCriteria implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
-    private int id;
-    @OneToOne
-    private Criteria criteria;
+    @Column(nullable = false)
+    private Long id;
+
+    /* @OneToOne
+    private Criteria criteria; */
     private String value;
- 
+
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 }

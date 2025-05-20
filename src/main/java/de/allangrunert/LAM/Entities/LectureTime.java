@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,16 +23,17 @@ import lombok.Setter;
 @NoArgsConstructor
 public class LectureTime implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id 
-    private int id;
+    @Id
+    @Column(nullable = false)
+    private Long id;
 
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String dayOfWeek;
-    @OneToMany
+    /*@OneToMany
     private ArrayList<Room> room; // could be more than one room
     @OneToMany
-    private ArrayList<AdministrativePerson> supervisor; // from lecture descending supervisors??
+    private ArrayList<AdministrativePerson> supervisor; // from lecture descending supervisors??*/
     
     private LocalDateTime createdAt;
     @UpdateTimestamp

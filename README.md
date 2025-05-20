@@ -7,21 +7,26 @@ __THIS IS CURRENTLY WORK IN PROGRESS, PLEASE WAIT FOR UPDATES__
 
 
 
-As back-end <a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> is used. In the front-end <a href="https://angular.dev/" target="_blank">Angular</a> is used.  
+
+
+As back-end <a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> Version 3.4.5 is used. In the front-end <a href="https://angular.dev/" target="_blank">Angular</a> is used.  
 
 ```
 TODOS:
-- Correct Mapping
-- Userauthorization
+- Correct Mapping and Connections between Entities
 - Subscribe and unsubscribe lecture
-- Create and modify lecture
-- Create and modify Base lecture
 - Frontend
 - Tests
+- Implement Angular Frontend
+- Add Document management
+- Refactor
 ```
 
 
-```./gradlew bootRun```
+```
+docker compose up -d
+./gradlew bootRun
+```
 
 <!-- Java Version 22  -->
 

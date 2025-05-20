@@ -1,5 +1,10 @@
 package de.allangrunert.lam.entities;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,8 +21,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class EmailLog implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id 
-    private int id;
+    @Id
+    @Column(nullable = false)
+    private Long id;
     private String email;
     private String subject;
     private String body;
@@ -32,8 +38,13 @@ public class EmailLog implements java.io.Serializable {
     private String priority;
     private String replyTo;
     private String inReplyTo;
-    private String references;
+    // private String references;
     private String messageId;
     private String contentType;
     private String charset;
+
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 }

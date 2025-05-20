@@ -1,5 +1,6 @@
 package de.allangrunert.lam.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,9 +21,10 @@ import java.io.Serializable;
 public class StudentProgressCriteria implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
-    private int id;
-    @OneToOne
-    private Criteria criteria;
+    @Column(nullable = false)
+    private Long id;
+    // @OneToOne
+    // private Criteria criteria;
     private String value;
     private String description;
 }

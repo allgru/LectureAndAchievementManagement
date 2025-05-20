@@ -2,6 +2,7 @@ package de.allangrunert.lam.entities;
 
 import java.util.ArrayList;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,10 +21,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ProgressRuleCriteria implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id 
-    private int id;
-    @OneToMany
-    private ArrayList<Criteria> criteria;
+    @Id
+    @Column(nullable = false)
+    private Long id;
+    /* @OneToMany
+    private ArrayList<Criteria> criteria;*/
     private String value;
  
 }

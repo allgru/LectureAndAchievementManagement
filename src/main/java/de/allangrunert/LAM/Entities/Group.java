@@ -1,7 +1,11 @@
 package de.allangrunert.lam.entities;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,17 +17,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "group")
+@Table(name = "groups")
 @Setter
 @Getter
 @NoArgsConstructor
 public class Group implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id 
-    private int id;
+    @Id
+    @Column(nullable = false)
+    private Long id;
     private String name;
     private String description;
-    @OneToMany
-    private ArrayList<User> userList;
+    // @OneToMany
+    // private ArrayList<User> userList;
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 
 }

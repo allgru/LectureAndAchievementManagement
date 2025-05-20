@@ -1,5 +1,10 @@
 package de.allangrunert.lam.entities;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +25,8 @@ import lombok.Setter;
 public class Document implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id 
-    private int id;
+    @Column(nullable = false)
+    private Long id;
 
     @Lob
     private byte[] data;
@@ -28,8 +34,11 @@ public class Document implements java.io.Serializable {
     private String name;
     private String description;
     
-    @OneToOne
-    private DocumentMetadata metaData;
+    // @OneToOne
+    // private DocumentMetadata metaData;
 
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
 
 }

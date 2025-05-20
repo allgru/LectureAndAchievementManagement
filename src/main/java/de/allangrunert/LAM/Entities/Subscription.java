@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,10 +25,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Subscription implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id 
+    @Id
+    @Column(nullable = false)
     private Long id;
 
-    @ManyToOne
+    /* @ManyToOne
     private Student student;
     @ManyToOne
     private Lecture Lecture;
@@ -41,14 +43,17 @@ public class Subscription implements java.io.Serializable {
     private ArrayList<SubscriptionCriteria> subscriptionCriteriaList;
     @OneToOne
     private LectureExamTime lectureExamTimeList;
+    */
     private LocalDateTime lectureExamDateTime; // backup for exam time
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;   
+    /* 
     @OneToMany
     private ArrayList<Document> documentList;
     @OneToOne
     private Grade grade;
     @OneToMany
     private ArrayList<PartialGrade> partialGradeList;
+    */
 }

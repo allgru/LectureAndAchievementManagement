@@ -2,6 +2,7 @@ package de.allangrunert.lam.entities;
 
 import java.util.ArrayList;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,14 +22,16 @@ import lombok.Setter;
 @NoArgsConstructor
 public class StudentProgressLog implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id 
-    private int id;
-    @ManyToOne
+    @Id
+    @Column(nullable = false)
+    private Long id;
+
+    /* @ManyToOne
     private Student student;
-    private Progress progress;
+    private Progress progress;*/
     private String date;
-    @OneToOne
-    private Criteria criteria;
+    /* @OneToOne
+    private Criteria criteria;*/
     private String value;
     private String description;
 

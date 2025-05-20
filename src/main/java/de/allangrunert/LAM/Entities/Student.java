@@ -3,6 +3,8 @@ package de.allangrunert.lam.entities;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -41,7 +43,11 @@ public class Student implements Serializable {
     private String birthPlace;
     private String birthCountry;
     private String socialMedia;
-    private User user;
-    @OneToMany
-    private ArrayList<StudentProgress> progressList;
+    // private User user;
+    /* @OneToMany
+    private ArrayList<StudentProgress> progressList;*/
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 }

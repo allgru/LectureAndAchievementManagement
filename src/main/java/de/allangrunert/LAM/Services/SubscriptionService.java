@@ -2,12 +2,15 @@ package de.allangrunert.lam.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import de.allangrunert.lam.entities.Criteria;
 import de.allangrunert.lam.entities.Subscription;
+import de.allangrunert.lam.repositories.SubscriptionRepository;
 
+@Service
 public class SubscriptionService {
     
-
     void subscribeToLecture(int studentId, int lectureId) {
         // TODO Auto-generated method stub
         
